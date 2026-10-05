@@ -1,0 +1,296 @@
+
+{% extends "base.html" %}
+
+{% block title %}
+Admin Dashboard - SmartShop
+{% endblock %}
+
+{% block base %}
+
+<section class="user-dashboard">
+
+    <!-- ================= DASHBOARD HEADER ================= -->
+
+    <div class="dashboard-header">
+
+        <h1>Welcome to Admin Dashboard</h1>
+
+        <p>
+            Manage your shopping, orders, cart and account
+            from one convenient place.
+        </p>
+
+    </div>
+
+
+    <!-- ================= DASHBOARD CARDS ================= -->
+
+    <div class="user-dashboard-container">
+
+
+        <!-- ADD CATEGORY -->
+
+        <div class="user-card">
+
+            <div class="user-card-icon">
+                🛍️
+            </div>
+
+            <h2>Add category</h2>
+
+            <p>
+                Explore our category and discover items
+                available in different categories.
+            </p>
+
+            <a href="{% url 'admin_addCategory' %}" class="user-btn">
+                Add category
+            </a>
+
+        </div>
+
+
+        <!-- VIEW Category -->
+
+        <div class="user-card">
+
+            <div class="user-card-icon">
+                📂
+            </div>
+
+            <h2>View Category</h2>
+
+            <p>
+                Browse Category by category and find
+                what you are looking for easily.
+            </p>
+
+            <a href="{% url 'admin_viewCategory' %}" class="user-btn">
+                View Category
+            </a>
+
+        </div>
+
+
+        <!-- ADD PRODUCT -->
+
+        <div class="user-card">
+
+            <div class="user-card-icon">
+                🛒
+            </div>
+
+            <h2>Add product</h2>
+
+            <p>
+                Add the products added to your cart
+                and manage your quantities.
+            </p>
+
+            <a href="{% url 'admin_addProduct' %}" class="user-btn">
+                Add Product
+            </a>
+
+        </div>
+
+        <!-- View PRODUCT -->
+
+        <div class="user-card">
+
+            <div class="user-card-icon">
+                💳
+            </div>
+
+            <h2>View Product</h2>
+
+            <p>
+                View your product details and
+                payment status.
+            </p>
+
+            <a href="{% url 'admin_viewProduct' %}" class="user-btn">
+                View Product
+            </a>
+
+        </div>
+
+
+
+        <!-- ADD Users -->
+
+        <div class="user-card">
+
+            <div class="user-card-icon">
+                📦
+            </div>
+
+            <h2>Add Users</h2>
+
+            <p>
+                Add your Users and check their
+                current order status.
+            </p>
+
+            <a href="{% url 'admin_addUser' %}" class="user-btn">
+                Add Users
+            </a>
+
+        </div>
+
+        <!-- VIEW Users -->
+
+        <div class="user-card">
+
+            <div class="user-card-icon">
+                📦
+            </div>
+
+            <h2>View Users</h2>
+
+            <p>
+                View your Users and check their
+                current order status.
+            </p>
+
+            <a href="{% url 'admin_viewUser' %}" class="user-btn">
+                View Users
+            </a>
+
+        </div>
+
+        <!-- VIEW Category Product -->
+
+        <div class="user-card">
+
+            <div class="user-card-icon">
+                📦
+            </div>
+
+            <h2>View Category Product</h2>
+
+            <p>
+                View your Category Product and check their
+                current order status.
+            </p>
+
+            <a href="{% url 'admin_viewCategoryProduct' %}" class="user-btn">
+                View Category Product
+            </a>
+
+        </div>
+
+        <!-- VIEW Product Order -->
+
+        <div class="user-card">
+
+            <div class="user-card-icon">
+                📦
+            </div>
+
+            <h2>View Product Order</h2>
+
+            <p>
+                View your Product Order and check their
+                current order status.
+            </p>
+
+            <a href="{% url 'admin_viewProductOrder' %}" class="user-btn">
+                View Product Order
+            </a>
+
+        </div>
+
+         <!-- VIEW User Product -->
+
+        <div class="user-card">
+
+            <div class="user-card-icon">
+                📦
+            </div>
+
+            <h2>View User Product</h2>
+
+            <p>
+                View your User Product and check their
+                current order status.
+            </p>
+
+            <a href="{% url 'admin_viewUserProduct' %}" class="user-btn">
+                View User Product
+            </a>
+
+        </div>
+
+        <!-- VIEW User Order -->
+
+        <div class="user-card">
+
+            <div class="user-card-icon">
+                📦
+            </div>
+
+            <h2>View User Order</h2>
+
+            <p>
+                View your User Order and check their
+                current order status.
+            </p>
+
+            <a href="{% url 'admin_viewUserOrder' %}" class="user-btn">
+                View User Order
+            </a>
+
+        </div>
+
+        <!-- VIEW User Payment -->
+
+        <div class="user-card">
+
+            <div class="user-card-icon">
+                📦
+            </div>
+
+            <h2>View User Payment</h2>
+
+            <p>
+                View your User Payment and check their
+                current Payment status.
+            </p>
+
+            <a href="{% url 'admin_viewUserPayment' %}" class="user-btn">
+                View User Payment
+            </a>
+
+        </div>
+
+        <!-- VIEW User Order Payment -->
+
+        <div class="user-card">
+
+            <div class="user-card-icon">
+                📦
+            </div>
+
+            <h2>View User Order Payment</h2>
+
+            <p>
+                View your User Payment and check their
+                current Payment status.
+            </p>
+
+            <a href="{% url 'admin_viewUserOrderPayment' %}" class="user-btn">
+                View User Order Payment
+            </a>
+
+        </div>
+
+
+
+
+        
+
+        
+</section>
+<a href="dashboard" >Back</a>
+{% endblock %}
+

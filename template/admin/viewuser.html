@@ -1,0 +1,63 @@
+{% extends "admin/view.html" %}
+{% block view %}
+
+<!-- Main Section -->
+    <main class="main-section">
+
+        <h1>View User Data</h1>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>User name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% if user %}
+                    {% for u in user %}
+
+                    <tr>
+                        <td>{{ u.uid }}</td>
+                        <td>{{u.uname }}</td>
+                        <td>{{ u.uemail }}</td>
+                        <td>{{ u.uphone }}</td>
+                        <td>{{ u.uaddr }}</td>
+                       
+
+                        <td>
+                            
+                            <a href="{% url 'admin_editUser' u.uid %}"
+                               class="edit-btn">
+                                Edit
+                            </a>
+
+                            <a href="{% url 'admin_deleteUser' u.uid %}"
+                               class="delete-btn"
+                               onclick="return confirm('Are you sure you want to delete this User ?');">
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+
+                    {% endfor %}
+                    {% endif %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+<a href="/admin_dashboard" class="btn btn-lg btn-primary">Back</a>
+
+{% endblock  %}

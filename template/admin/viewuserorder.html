@@ -1,0 +1,99 @@
+{% extends "admin/view.html" %}
+
+{% block view %}
+
+<div class="table-section">
+
+
+<div class="section-heading">
+
+    <h2>All User Order Information</h2>
+
+    <p>
+        View users and their complete order information
+    </p>
+
+</div>
+
+<div class="table-container">
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>User ID</th>
+                <th>User Name</th>
+                <th>Email</th>
+                <th>Order ID</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Total Amount</th>
+                <th>Order Date</th>
+                <th>Order Status</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for u in user %}
+
+                {% for o in u.Order.all %}
+
+                <tr>
+
+                    <td>{{ u.uid }}</td>
+                    <td>{{ u.uname }}</td>
+                    <td>{{ u.uemail }}</td>
+                    <td>{{ o.oid }}</td>
+                    <td>{{ o.product.pname }}</td>
+                    <td>{{ o.quantity }}</td>
+                    <td>₹{{ o.total_amount }}</td>
+                    <td>{{ o.order_date }}</td>
+                    <td>{{ o.order_status }}</td>
+
+                </tr>
+
+                {% empty %}
+
+                <tr>
+
+                    <td>{{ u.uid }}</td>
+                    <td>{{ u.uname }}</td>
+                    <td>{{ u.uemail }}</td>
+
+                    <td colspan="6">
+                        No order
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            {% empty %}
+
+            <tr>
+
+                <td colspan="9">
+                    No user data available.
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+
+</div>
+
+<a href="/admin_dashboard" class="btn btn-lg btn-primary">
+    Back
+</a>
+
+{% endblock %}

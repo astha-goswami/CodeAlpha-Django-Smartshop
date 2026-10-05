@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block base %}
+
+<form method="post">
+<br>
+{{form}}
+{% csrf_token %}
+<br>
+<input type="submit" value="Submit" class="btn btn-lg btn-success">
+</form>
+
+<br>
+
+<a href="/admin_dashboard" class="btn btn-lg btn-primary">Back</a>
+
+{% endblock  %}

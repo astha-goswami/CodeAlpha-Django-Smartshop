@@ -1,0 +1,63 @@
+{% extends "user/view.html" %}
+{% block view %}
+
+<!-- Main Section -->
+    <main class="main-section">
+
+        <h1>View Payment Data</h1>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Payment ID</th>
+                        <th>Payment method</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% if payment %}
+                    {% for payment in payment %}
+
+                    <tr>
+                        <td>{{ payment.paymentid }}</td>
+                        <td>{{payment.payment_method }}</td>
+                        <td>{{ payment.payment_amount }}</td>
+                        <td>{{ payment.payment_status }}</td>
+                        <td>{{ payment.payment_date }}</td>
+                       
+
+                        <td>
+                            
+                            <a href="{% url 'user_editPayment' payment.paymentid %}"
+                               class="edit-btn">
+                                Edit
+                            </a>
+
+                            <a href="{% url 'user_deletePayment' payment.paymentid %}"
+                               class="delete-btn"
+                               onclick="return confirm('Are you sure you want to delete this User ?');">
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+
+                    {% endfor %}
+                    {% endif %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+<a href="/user_dashboard" class="btn btn-lg btn-primary">Back</a>
+
+{% endblock  %}

@@ -1,0 +1,62 @@
+{% extends "admin/view.html" %}
+{% block view %}
+
+<!-- Main Section -->
+    <main class="main-section">
+
+        <h1>View Product Data</h1>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Product name</th>
+                        <th>Price</th>
+                        <th>Product Quantity</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% if product %}
+                    {% for p in product %}
+
+                    <tr>
+                        <td>{{ p.pid }}</td>
+                        <td>{{ p.pname }}</td>
+                        <td>{{ p.pprice }}</td>
+                        <td>{{p.pquantity }}</td>
+
+                       
+
+                        <td>
+                            
+                            <a href="{% url 'admin_editProduct' p.pid %}"
+                               class="edit-btn">
+                                Edit
+                            </a>
+
+                            <a href="{% url 'admin_deleteProduct' p.pid %}"
+                               class="delete-btn"
+                               onclick="return confirm('Are you sure you want to delete this Product ?');">
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+
+                    {% endfor %}
+                    {% endif %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+<a href="/admin_dashboard" class="btn btn-lg btn-primary">Back</a>
+
+{% endblock  %}

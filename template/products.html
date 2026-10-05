@@ -1,0 +1,370 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block base %}
+
+<section class="category-section">
+
+    <h1>Shop by Category</h1>
+
+    <p class="category-intro">
+        Explore our wide range of products
+    </p>
+
+    <div class="category-container">
+
+        <!-- Fashion -->
+        <div class="category-card">
+            <img src="{% static 'images/fashion.jpg' %}" alt="Fashion">
+
+            <div class="category-info">
+                <h2>Fashion</h2>
+                <p>Discover clothing, footwear and accessories.</p>
+                <a href="#Fashion">Explore Fashion Now</a>
+            </div>
+        </div>
+
+
+        <!-- Electronics -->
+        <div class="category-card">
+            <img src="{% static 'images/electronics.jpg' %}" alt="Electronics">
+
+            <div class="category-info">
+                <h2>Electronics</h2>
+                <p>Find gadgets, devices and electronic accessories.</p>
+                <a href="#Electronics">Explore Electronics Now</a>
+            </div>
+        </div>
+
+
+        <!-- Groceries -->
+        <div class="category-card">
+            <img src="{% static 'images/grocery.jpg' %}" alt="Groceries">
+
+            <div class="category-info">
+                <h2>Groceries</h2>
+                <p>Shop everyday essentials and fresh products.</p>
+                <a href="#Groceries">Explore Groceries Now</a>
+            </div>
+        </div>
+
+
+        <!-- Kitchenware -->
+        <div class="category-card">
+            <img src="{% static 'images/kitchenware.jpg' %}" alt="Kitchenware">
+
+            <div class="category-info">
+                <h2>Kitchenware</h2>
+                <p>Everything you need for your modern kitchen.</p>
+                <a href="#Kitchenware">Explore Kitchenware Now</a>
+            </div>
+        </div>
+
+
+        <!-- Home Decor -->
+        <div class="category-card">
+            <img src="{% static 'images/decor.jpg' %}" alt="Home Decor">
+
+            <div class="category-info">
+                <h2>Home Decor</h2>
+                <p>Make your home beautiful and comfortable.</p>
+                <a href="#Decor">Explore Decor Now</a>
+            </div>
+        </div>
+
+
+        <!-- Beauty -->
+        <div class="category-card">
+            <img src="{% static 'images/beauty.jpg' %}" alt="Beauty and Personal Care">
+
+            <div class="category-info">
+                <h2>Beauty & Personal Care</h2>
+                <p>Explore skincare, haircare and personal care products.</p>
+                <a href="#Beauty">Explore Beauty Now</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FASHION ================= -->
+
+<section id="Fashion" class="category-section">
+
+    <h2 class="category-title">Fashion</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="{% static 'images/men.jpg' %}" alt="Men">
+            <h3>Men</h3>
+            <p class="price">₹999</p>
+            {% comment %} <a href="{% url 'addtocart' 1 %}" class="cart-btn">
+                Add to Cart
+            </a> {% endcomment %}
+        </div>
+
+        <div class="product-card">
+            <img src="{% static 'images/women.jpg' %}" alt="Women">
+            <h3>Women</h3>
+            <p class="price">₹1299</p>
+            {% comment %} <a href="{% url 'addtocart' 2 %}" class="cart-btn">
+                Add to Cart
+            </a> {% endcomment %}
+        </div>
+
+        <div class="product-card">
+            <img src="{% static 'images/kids.jpg' %}" alt="Kids">
+            <h3>Kids</h3>
+            <p class="price">₹799</p>
+            {% comment %} <a href="{% url 'addtocart' 3  %}" class="cart-btn">
+                Add to Cart
+            </a> {% endcomment %}
+        </div>
+
+        <div class="product-card">
+            <img src="{% static 'images/jewellery.jpg' %}" alt="Jewellery">
+            <h3>Jewellery</h3>
+            <p class="price">₹599</p>
+            {% comment %} <a href="{% url 'addtocart' 4 %}" class="cart-btn">
+                Add to Cart
+            </a> {% endcomment %}
+        </div>
+
+        <div class="product-card">
+            <img src="{% static 'images/shoes.jpg' %}" alt="Shoes">
+            <h3>Shoes</h3>
+            <p class="price">₹1499</p>
+            {% comment %} <a href="{% url 'addtocart' 5 %}" class="cart-btn">
+                Add to Cart
+            </a> {% endcomment %}
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= KITCHENWARE ================= -->
+
+<section id="Kitchenware" class="category-section">
+
+    <h2 class="category-title">Kitchenware</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="{% static 'images/crocery.jpg' %}" alt="Crocery">
+            <h3>Crocery</h3>
+            <p class="price">₹499</p>
+            {% comment %} <a href="{% url 'addtocart' 6 %}" class="cart-btn">
+                Add to Cart
+            </a> {% endcomment %}
+        </div>
+
+        <div class="product-card">
+            <img src="{% static 'images/glass.jpg' %}" alt="Glass">
+            <h3>Glass</h3>
+            <p class="price">₹299</p>
+            {% comment %} <a href="{% url 'addtocart' 7 %}" class="cart-btn">
+                Add to Cart
+            </a> {% endcomment %}
+        </div>
+
+        <div class="product-card">
+            <img src="{% static 'images/utensils.jpg' %}" alt="Utensils">
+            <h3>Utensils</h3>
+            <p class="price">₹699</p>
+            {% comment %} <a href="{% url 'addtocart' 8 %}" class="cart-btn">
+                Add to Cart
+            </a> {% endcomment %}
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ELECTRONICS ================= -->
+
+<section id="Electronics" class="category-section">
+
+    <h2 class="category-title">Electronics</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="{% static 'images/phones.jpg' %}" alt="Phones">
+            <h3>Phones</h3>
+            <p class="price">₹15999</p>
+            {% comment %} <a href="{% url 'addtocart' 9 %}" class="cart-btn">
+                Add to Cart
+            </a> {% endcomment %}
+        </div>
+
+        <div class="product-card">
+            <img src="{% static 'images/laptop.jpg' %}" alt="Laptop">
+            <h3>Laptop</h3>
+            <p class="price">₹54999</p>
+            {% comment %} <a href="{% url 'addtocart' 10 %}" class="cart-btn">
+                Add to Cart
+            </a> {% endcomment %}
+        </div>
+
+        <div class="product-card">
+            <img src="{% static 'images/fridge.jpg' %}" alt="Fridge">
+            <h3>Fridge</h3>
+            <p class="price">₹32999</p>
+            {% comment %} <a href="{% url 'addtocart' 11 %}" class="cart-btn">
+                Add to Cart
+            </a> {% endcomment %}
+        </div>
+
+        <div class="product-card">
+            <img src="{% static 'images/washingmachine.jpg' %}" alt="Washing Machine">
+            <h3>Washing Machine</h3>
+            <p class="price">₹25999</p>
+            {% comment %} <a href="{% url 'addtocart' 12 %}" class="cart-btn">
+                Add to Cart
+            </a> {% endcomment %}
+        </div>
+
+        <div class="product-card">
+            <img src="{% static 'images/tv.jpg' %}" alt="TV">
+            <h3>TV</h3>
+            <p class="price">₹29999</p>
+            {% comment %} <a href="{% url 'addtocart' 13 %}" class="cart-btn">
+                Add to Cart
+            </a> {% endcomment %}
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GROCERIES ================= -->
+
+<section id="Groceries" class="category-section">
+
+    <h2 class="category-title">Groceries</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="{% static 'images/fruits.jpg' %}" alt="Fruits">
+            <h3>Fruits</h3>
+            <p class="price">₹199</p>
+            {% comment %} <a href="{% url 'addtocart' 14 %}" class="cart-btn">
+                Add to Cart
+            </a> {% endcomment %}
+        </div>
+
+        <div class="product-card">
+            <img src="{% static 'images/veggies.jpg' %}" alt="Vegetables">
+            <h3>Vegetables</h3>
+            <p class="price">₹149</p>
+            {% comment %} <a href="{% url 'addtocart'  15 %}" class="cart-btn">
+                Add to Cart
+            </a> {% endcomment %}
+        </div>
+
+        <div class="product-card">
+            <img src="{% static 'images/oats.jpg' %}" alt="Oats">
+            <h3>Oats</h3>
+            <p class="price">₹299</p>
+            {% comment %} <a href="{% url 'addtocart' 16 %}" class="cart-btn">
+                Add to Cart
+            </a> {% endcomment %}
+        </div>
+
+        <div class="product-card">
+            <img src="{% static 'images/proteinpowder.jpg' %}" alt="Protein Powder">
+            <h3>Protein Powder</h3>
+            <p class="price">₹1999</p>
+            {% comment %} <a href="{% url 'addtocart' 17 %}" class="cart-btn">
+                Add to Cart
+            </a> {% endcomment %}
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BEAUTY ================= -->
+
+<section id="Beauty" class="category-section">
+
+    <h2 class="category-title">Beauty</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="{% static 'images/skincare.jpg' %}" alt="Skincare">
+            <h3>Skincare</h3>
+            <p class="price">₹699</p>
+            {% comment %} <a href="{% url 'addtocart'  18%}" class="cart-btn">
+                Add to Cart
+            </a> {% endcomment %}
+        </div>
+
+        <div class="product-card">
+            <img src="{% static 'images/nykaa.jpg' %}" alt="Beauty Products">
+            <h3>Beauty Products</h3>
+            <p class="price">₹899</p>
+            {% comment %} <a href="{% url 'addtocart' 19 %}" class="cart-btn">
+                Add to Cart
+            </a> {% endcomment %}
+        </div>
+
+        <div class="product-card">
+            <img src="{% static 'images/haircare.jpg' %}" alt="Haircare">
+            <h3>Haircare</h3>
+            <p class="price">₹599</p>
+            {% comment %} <a href="{% url 'addtocart' 20 %}" class="cart-btn">
+                Add to Cart
+            </a> {% endcomment %}
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+{% comment %} <h1>Our Products</h1>
+
+<div class="products-container">
+
+    {% for product in products %}
+
+    <div class="product-card">
+
+        <img src="{{ product.image.url }}"
+             alt="{{ product.pname }}">
+
+        <h2>{{ product.pname }}</h2>
+
+        <p>₹{{ product.pprice }}</p>
+
+        <a href="{% url 'addtocart' product.pid %}">
+            <button>Add to Cart</button>
+        </a>
+
+    </div>
+
+    {% endfor %}
+
+</div> {% endcomment %}
+
+
+{% endblock %}

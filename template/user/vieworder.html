@@ -1,0 +1,63 @@
+{% extends "user/view.html" %}
+{% block view %}
+
+<!-- Main Section -->
+    <main class="main-section">
+
+        <h1>View Order Data</h1>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Order quantity</th>
+                        <th>Amount</th>
+                        <th>Order date</th>
+                        <th>Order status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% if order %}
+                    {% for o in order %}
+
+                    <tr>
+                        <td>{{ o.oid }}</td>
+                        <td>{{ o.quantity }}</td>
+                        <td>{{ o.total_amount }}</td>
+                        <td>{{ o.order_date }}</td>
+                        <td>{{ o.order_status }}</td>
+                       
+
+                        <td>
+                            
+                            <a href="{% url 'user_editOrder' o.oid %}"
+                               class="edit-btn">
+                                Edit
+                            </a>
+
+                            <a href="{% url 'user_deleteOrder' o.oid %}"
+                               class="delete-btn"
+                               onclick="return confirm('Are you sure you want to delete this Order ?');">
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+
+                    {% endfor %}
+                    {% endif %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+<a href="/user_dashboard" class="btn btn-lg btn-primary">Back</a>
+
+{% endblock  %}

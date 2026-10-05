@@ -1,0 +1,88 @@
+
+{% extends "base.html" %}
+
+{% block title %}
+SmartShop - Dashboard
+{% endblock %}
+
+{% block base %}
+
+<section class="dashboard-page">
+
+    <!-- ================= PAGE HEADER ================= -->
+
+    <div class="dashboard-header">
+
+        <h1>SmartShop Dashboard</h1>
+
+        <p>
+            Manage your shopping experience and store operations
+            from one convenient place.
+        </p>
+
+    </div>
+
+
+    <!-- ================= DASHBOARD SECTIONS ================= -->
+
+    <div class="dashboard-container">
+
+
+        <!-- ================= USER DASHBOARD ================= -->
+
+        <div class="dashboard-section user-dashboard">
+
+            <div class="dashboard-icon">
+                🛒
+            </div>
+
+            <h2>User Dashboard</h2>
+
+            <p>
+                Explore products, manage your cart, place orders
+                and manage your shopping account.
+            </p>
+
+            <div class="dashboard-buttons">
+
+                <a href="{% url 'user_dashboard' %}" class="dashboard-btn">
+                    Open User Dashboard
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= ADMIN DASHBOARD ================= -->
+
+        <div class="dashboard-section admin-dashboard">
+
+            <div class="dashboard-icon">
+                ⚙️
+            </div>
+
+            <h2>Admin Dashboard</h2>
+
+            <p>
+                Manage products, categories, users, orders,
+                payments and reviews.
+            </p>
+
+            <div class="dashboard-buttons">
+
+                <a href="{% url 'admin_dashboard' %}" class="dashboard-btn">
+                    Open Admin Dashboard
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+{% endblock %}
+

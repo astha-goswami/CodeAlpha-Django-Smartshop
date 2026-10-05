@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block base %}
+
+<div class="cart-container">
+
+    <h1>My Cart</h1>
+
+    {% if cart_items %}
+
+        {% for item in cart_items %}
+
+        <div class="cart-item">
+
+            <div class="cart-image">
+                <img src="{{ item.product.pimage.url }}" alt="{{ item.product.pname }}">
+            </div>
+
+            <div class="cart-details">
+
+                <h2>{{ item.product.pname }}</h2>
+
+                <p>Price: ₹{{ item.product.pprice }}</p>
+
+                <p>Quantity: {{ item.quantity }}</p>
+
+                <p>
+                    Total:
+                    ₹{% widthratio item.product.pprice 1 item.quantity %}
+                </p>
+
+                <a href="#" class="remove-btn">
+                    Remove
+                </a>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <div class="empty-cart">
+            <h2>Your Cart is Empty</h2>
+            <p>Add some products to your cart.</p>
+
+            <a href="{% url 'products' %}" class="shop-btn">
+                Continue Shopping
+            </a>
+        </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

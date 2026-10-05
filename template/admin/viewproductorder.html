@@ -1,0 +1,113 @@
+{% extends "admin/view.html" %}
+
+{% block view %}
+
+<div class="table-section">
+
+
+<div class="section-heading">
+
+    <h2>All Product Order Information</h2>
+
+    <p>
+        View products, users and their orders together
+    </p>
+
+</div>
+
+<div class="table-container">
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                
+                <th>Order ID</th>
+                <th>User Name</th>
+                <th>Quantity</th>
+                <th>Total Amount</th>
+                <th>Order Date</th>
+                <th>Order Status</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for p in product %}
+
+                {% for o in p.Order.all %}
+
+                <tr>
+
+                    <td>{{ p.pid }}</td>
+
+                    <td>{{ p.pname }}</td>
+
+                    <td>₹{{ p.pprice }}</td>
+
+
+                    <td>{{ o.oid }}</td>
+
+                    <td>{{ o.user.uname }}</td>
+
+                    <td>{{ o.quantity }}</td>
+
+                    <td>₹{{ o.total_amount }}</td>
+
+                    <td>{{ o.order_date }}</td>
+
+                    <td>{{ o.order_status }}</td>
+
+                </tr>
+
+                {% empty %}
+
+                <tr>
+
+                    <td>{{ p.pid }}</td>
+
+                    <td>{{ p.pname }}</td>
+
+                    <td>₹{{ p.pprice }}</td>
+
+                    <td>{{ p.category.cname }}</td>
+
+                    <td colspan="6">
+                        No order
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            {% empty %}
+
+            <tr>
+
+                <td colspan="10">
+                    No product data available.
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+
+</div>
+
+<a href="/admin_dashboard" class="btn btn-lg btn-primary">
+    Back
+</a>
+
+{% endblock %}

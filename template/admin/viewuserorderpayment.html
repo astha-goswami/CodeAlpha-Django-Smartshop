@@ -1,0 +1,112 @@
+{% extends "admin/view.html" %}
+
+{% block view %}
+
+<div class="table-section">
+
+<div class="section-heading">
+
+    <h2>All User Order Payment Information</h2>
+
+    <p>
+        View users, products, orders and payments together
+    </p>
+
+</div>
+
+<div class="table-container">
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>User ID</th>
+                <th>User Name</th>
+                <th>Order ID</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Order Amount</th>
+                <th>Payment ID</th>
+                <th>Payment Method</th>
+                <th>Payment Amount</th>
+                <th>Payment Status</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for u in user %}
+
+                {% for o in u.Order.all %}
+
+                    {% if o.Payment %}
+
+                    <tr>
+
+                        <td>{{ u.uid }}</td>
+
+                        <td>{{ u.uname }}</td>
+
+                        <td>{{ o.oid }}</td>
+
+                        <td>{{ o.product.pname }}</td>
+
+                        <td>{{ o.quantity }}</td>
+
+                        <td>₹{{ o.total_amount }}</td>
+
+                        <td>{{ o.Payment.paymentid }}</td>
+
+                        <td>{{ o.Payment.payment_method }}</td>
+
+                        <td>₹{{ o.Payment.payment_amount }}</td>
+
+                        <td>{{ o.Payment.payment_status }}</td>
+
+                    </tr>
+
+                    {% endif %}
+
+                {% empty %}
+
+                <tr>
+
+                    <td>{{ u.uid }}</td>
+                    <td>{{ u.uname }}</td>
+
+                    <td colspan="8">
+                        No order/payment
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            {% empty %}
+
+            <tr>
+
+                <td colspan="10">
+                    No user data available.
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+
+</div>
+
+<a href="/admin_dashboard" class="btn btn-lg btn-primary">
+    Back
+</a>
+
+{% endblock %}
